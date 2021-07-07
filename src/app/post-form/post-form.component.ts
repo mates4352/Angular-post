@@ -27,12 +27,13 @@ export class PostFormComponent implements OnInit {
 
         const post: Post = {
           title: this.title,
-          text: this.text
+          text: this.text,
         }
 
         this.title = this.text = ''
 
         this.onAdd.emit(post)
+        console.log(post);
 
       } else {
         alert("Заголовок больше 20 символом, текст больше 80 символов, нельзя!")

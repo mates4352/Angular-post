@@ -17,6 +17,7 @@
   <small [ngStyle]="{
     color:'red'
   }" *ngIf="post.text.length > 20; else small">Много текста</small>
+
   <ng-template #small>
     <small [ngStyle]="{
       color:'red'

@@ -9,6 +9,7 @@ import { Post } from '../app.component';
 export class PostComponent implements OnInit {
 
   @Input() post: Post | any
+  @Input() index: number | any
   @Output() onDeletPost = new EventEmitter<number>()
 
   constructor() { }

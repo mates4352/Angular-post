@@ -4,6 +4,20 @@
   padding: 0 25px;
   font-size: 25px;
   margin: 15px 0;
+  transition: background-color 500ms ease, color 500ms ease;
+
+  &:focus {
+    background-color: rgb(126, 1, 1);
+    color: #fff;
+  }
+
+  &::placeholder {
+    transition: color 500ms ease;
+  }
+
+  &:focus::placeholder{
+    color: #fff;
+  }
 }
 
 .btn {
@@ -16,8 +30,13 @@
   background-color: rgb(46, 44, 44);
   border: none;
   cursor: pointer;
+  transition: background-color 500ms ease;
 
   &:last-child {
     margin: 0;
+  }
+
+  &:hover {
+    background-color: rgb(126, 1, 1);
   }
 }

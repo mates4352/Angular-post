@@ -1,8 +1,11 @@
 <div class="wrapper">
 
-  <h2>lorem</h2>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, provident.</p>
+  <h2>{{post.title}}</h2>
+  <p>{{post.text}}</p>
 
-  <button class="btn">X</button>
+
+  <ng-content></ng-content>
+
+  <button class="btn" (click) = "removePost()">X</button>
 
 </div>

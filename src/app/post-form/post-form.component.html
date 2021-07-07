@@ -1,9 +1,9 @@
 <div>
 
-  <input class="input" type="text" placeholder="Title...">
-  <input class="input" type="text" placeholder="Text...">
+  <input class="input" #Title type="text" [(ngModel)] = "title" placeholder="Title...">
+  <input class="input" type="text" [(ngModel)] = "text" placeholder="Text...">
 
-  <button class="btn">Создать пост</button>
-  <button class="btn">Удалить пост</button>
-  <button class="btn">Перейти к полю Title</button>
+  <button class="btn" (click) = "addPost()">Создать пост</button>
+  <button class="btn" (click) = "removePost()">Удалить пост</button>
+  <button class="btn" (click) = "focusInputTitle()">Перейти к полю Title</button>
 </div>

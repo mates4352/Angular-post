@@ -2,7 +2,7 @@
 
   <input class="input" #Title type="text" [(ngModel)] = "title" placeholder="Title...">
   <input class="input" type="text" [(ngModel)] = "text" placeholder="Text...">
-  <input class="input" type="text" [(ngModel)] = "Search" [placeholder]="SearchTitleText">
+  <input class="input" type="text" (keyup)="key()" [(ngModel)] = "Search" [placeholder]="SearchTitleText">
 
   <button class="btn" (click) = "addPost()">Создать пост</button>
   <button class="btn" (click) = "removePost()">Удалить пост</button>

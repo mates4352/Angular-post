@@ -6,6 +6,7 @@ import { Post } from '../app.component';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.scss']
 })
+
 export class PostFormComponent implements OnInit {
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>()
@@ -17,7 +18,7 @@ export class PostFormComponent implements OnInit {
   title = ''
   text = ''
   Search = ''
-  SearchTitleText="Search title"
+  SearchTitleText="title"
 
   constructor() { }
 
@@ -58,11 +59,14 @@ export class PostFormComponent implements OnInit {
   }
 
   SearchTitle(){
-    this.send.emit(this.Search)
     this.TitleText.emit(this.SearchTitleText)
   }
 
   SearchText(){
+    this.TitleText.emit(this.SearchTitleText)
+  }
+
+  key(){
     this.send.emit(this.Search)
     this.TitleText.emit(this.SearchTitleText)
   }

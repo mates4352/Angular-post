@@ -10,10 +10,14 @@ export class PostFormComponent implements OnInit {
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>()
   @Output() onRemov = new EventEmitter<Post>()
+  @Output() send = new EventEmitter<string>()
+  @Output() TitleText = new EventEmitter<string>()
   @ViewChild('Title') titleFocus: ElementRef | any
 
   title = ''
   text = ''
+  Search = ''
+  SearchTitleText="Search title"
 
   constructor() { }
 
@@ -51,6 +55,16 @@ export class PostFormComponent implements OnInit {
 
   focusInputTitle() {
     this.titleFocus.nativeElement.focus()
+  }
+
+  SearchTitle(){
+    this.send.emit(this.Search)
+    this.TitleText.emit(this.SearchTitleText)
+  }
+
+  SearchText(){
+    this.send.emit(this.Search)
+    this.TitleText.emit(this.SearchTitleText)
   }
 
 }

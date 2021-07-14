@@ -13,6 +13,9 @@ export interface Post {
 })
 export class AppComponent {
 
+  Search = ''
+  SearchTitleText = 'title'
+
   posts: Post[] = [
     { title: "lorem-1", text: "lorem-1 lorem-1 lorem-1 lorem-1", id: 1 },
     { title: "lorem-2", text: "lorem-2 lorem-2", id: 2 }
@@ -28,6 +31,14 @@ export class AppComponent {
 
   delete(id:number) {
     this.posts = this.posts.filter(item => item.id !== id)
+  }
+
+  serch(post:any){
+    this.Search = post
+  }
+
+  serchText(value:string){
+    this.SearchTitleText = value
   }
 
 }

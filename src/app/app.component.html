@@ -2,6 +2,8 @@
   <h1>Cоздать пост</h1>
 
   <app-post-form
+    (TitleText) = 'serchText($event)'
+    (send)= "serch($event)"
     (onAdd) = "addPost($event)"
     (onRemov) = "removePost()"
   >
@@ -10,12 +12,12 @@
   <hr>
 
   <app-post
-    *ngFor = "let post of posts"
+    *ngFor = "let post of posts | filter:Search:SearchTitleText"
     [post] = "post"
     (onDeletPost) = "delete($event)"
   >
   <small [ngStyle]="{
-    color:'red'
+    color:'green'
   }" *ngIf="post.text.length > 20; else small">Много текста</small>
 
   <ng-template #small>
